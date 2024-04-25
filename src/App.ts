@@ -20,7 +20,6 @@ class App {
     }
 
     private async DatabaseConfig(): Promise<void> {
-        this.database.connect()
     }
 
 }
