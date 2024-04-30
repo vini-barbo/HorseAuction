@@ -11,6 +11,7 @@ ALTER TABLE
 CREATE TABLE "user"(
     "user_id" BIGINT NOT NULL,
     "nome" TEXT NOT NULL,
+    "email" TEXT NOT NULL UNIQUE,
     "password" UUID NOT NULL,
     "type" INTEGER NOT NULL,
     "company_id" BIGINT NULL,

@@ -1,5 +1,9 @@
-USERNAME='Auction_owner'
-PASSWORD= ''
-HOST= 'ep-wild-sea-a52ruewz.us-east-2.aws.neon.tech'
-DATABASE= 'Auction'
-SSL='TRUE'
+DB_USERNAME= Auction_owner
+DB_PASSWORD= YlrD47JBFmqs
+DB_PORT= 5432
+DB_HOST= ep-wild-sea-a52ruewz.us-east-2.aws.neon.tech
+DB_DATABASE= Auction
+DB_SSL= True
+
+
+SERVER_PORT=3000
