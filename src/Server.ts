@@ -12,7 +12,7 @@ class Server {
                 console.log(`✅ [${moment().format()}] Server Connection has been create successfully at port ${this.SERVER_PORT}`)
             })
         } catch (error) {
-            console.log(`❌ [${moment().format()}] Failed to connect the database at port ${this.SERVER_PORT}`, error)
+            console.log(`❌ [${moment().format()}] Failed to create a server at port ${this.SERVER_PORT}`, error)
         }
 
     }
