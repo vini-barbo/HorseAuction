@@ -1,0 +1,11 @@
+POSTGRES_DB=postgres
+POSTGRES_HOST=localhost
+POSTGRES_PORT=3000
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=2020
+
+POSTGRES_DB_URL= postgresql://postgres:2020@localhost:3000/postgres
+
+SERVER_PORT=4000
+
+
