@@ -4,6 +4,7 @@ import { UserModel } from './database/model/UserModel'
 import "express-async-errors";
 import { IUserCreate } from "./interfaces/UserInterface";
 import moment from "moment-timezone";
+import { randomUUID } from "crypto";
 
 
 class App {
@@ -27,17 +28,19 @@ class App {
 
     private async insertTest() {
 
-        for (let i = 0; i < 20; i++) {
-            console.log(1)
-            const userCreateData: IUserCreate = {
-                name: 'teste1',
-                password: crypto.randomUUID(),
-                email: crypto.randomUUID() + '@hotmail.com',
-                status: 1,
-                type: 1,
-            }
-            await UserModel.createUser(userCreateData)
-        }
+        // for (let i = 0; i < 20; i++) {
+        //     console.log(1)
+        //     const userCreateData: IUserCreate = {
+        //         name: 'teste1',
+        //         password: crypto.randomUUID(),
+        //         email: crypto.randomUUID() + '@hotmail.com',
+        //         status: 1,
+        //         type: 1,
+        //     }
+        //     await UserModel.createUser(userCreateData)
+        // }
+        const response = await UserModel.findUser(randomUUID())
+        console.log(response)
 
     }
 

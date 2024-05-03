@@ -12,14 +12,19 @@ abstract class UserModel {
         console.log('adicionando usuario')
         try {
             const response: IUserModel | any = await database.client.query(query, values)
-            console.log(response)
             return response as IUserModel
         } catch (error) {
             console.log(error)
         }
     }
     public static async findUser(userId: UUID) {
-        const query = ' '
+        const query = 'SELECT * FROM "user";'
+        try {
+            const response: IUserModel | any = await database.client.query(query)
+            return response as IUserModel
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 
