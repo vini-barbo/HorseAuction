@@ -1,5 +1,5 @@
 import { randomUUID, UUID } from 'crypto';
-import { IUserCreate, IUserModel } from "../../interfaces/UserInterface";
+import { IUserCreate, IUserFind, IUserModel } from "../../interfaces/UserInterface";
 import { database } from "../Database";
 import { Crypt } from '../../utils/Crypt';
 
@@ -17,7 +17,7 @@ abstract class UserModel {
             console.log(error)
         }
     }
-    public static async findUser(userId: UUID) {
+    public static async findUser(findUserBy: IUserFind) {
         const query = 'SELECT * FROM "user";'
         try {
             const response: IUserModel | any = await database.client.query(query)

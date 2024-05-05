@@ -1,19 +1,20 @@
-import { UUID } from "crypto";
-import { Status, Type } from "./Utils";
+import { Status } from "./Utils";
 
 interface IUserModel {
     user_id: number,
     name: string,
-    password: UUID
+    password: string,
     email: string,
     status: Status
-    type: Type,
+    role: 'USER' | 'OWNER',
     companyId?: number,
-    created_at: Date
-    update_at?: Date,
-    deleted_at?: Date
+    createdAt: Date
+    updateAt?: Date,
+    deletedAt?: Date
 }
 
-interface IUserCreate extends Omit<IUserModel, 'user_id' | 'update_at' | 'created_at' | 'deleted_at'> { }
+interface IUserCreate extends Omit<IUserModel, 'user_id' | 'created_at'> { }
 
-export { IUserModel, IUserCreate }
+interface IUserFind extends Partial<IUserModel> { }
+
+export { IUserModel, IUserCreate, IUserFind }
